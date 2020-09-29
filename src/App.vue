@@ -1,15 +1,25 @@
 <template>
-  <Counter defaultValue="5"/>
-  <div id="dddd">123</div>
+  <div>
+    <Header/>
+    <div>
+      <router-view></router-view>
+    </div>
+    <div>footer</div>
+  </div>
 </template>
 
 <script>
-import Counter from './components/Counter.vue'
-
+import Header from './components/Header'
 export default {
   name: 'App',
   components: {
-    Counter
+    Header
+  },
+  created () {
+    // console.log(1)
+    // console.log(this.$router)
+    // listIssues().then(console.log)
+    // searchIssuesByTitle('Testing').then(console.log)
   }
 }
 </script>
@@ -21,6 +31,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
 </style>
