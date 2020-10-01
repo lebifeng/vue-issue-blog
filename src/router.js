@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import About from './pages/About'
-import Posts from './pages/Posts'
-import Post from './pages/Post'
+import About from '@/pages/About'
+import Posts from '@/pages/Posts'
+import Post from '@/pages/Post'
 
 const router = createRouter({
   history: createWebHashHistory(),

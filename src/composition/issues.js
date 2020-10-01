@@ -1,4 +1,4 @@
-import { listIssues } from '../services'
+import { listIssues } from '@/services'
 import { ref } from 'vue'
 import _get from 'lodash.get'
 
