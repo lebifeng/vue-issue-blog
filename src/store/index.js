@@ -21,12 +21,14 @@ export default createStore({
     getUserInfo ({commit}) {
       fetchUserInfo().then((res) => {
         const payload = _get(res, 'data', {}) || {}
+        console.log('userinfo', payload)
         commit('setUserInfo', payload)
       })
     },
     getIssues ({commit}) {
       fetchIssues().then((res) => {
         const payload = _get(res, 'data', []) || []
+        console.log('issues', payload)
         commit('setIssues', payload)
       })
     }

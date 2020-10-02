@@ -17,6 +17,11 @@ export function fetchIssuesByTitle (title) {
 }
 
 export function fetchUserInfo () {
-  let url = `https://api.github.com/users/${username}`;
+  let url = `/users/${username}`;
+  return axios.get(url)
+}
+
+export function fetchIssueByNumber (number) {
+  let url = `/repos/${issueRepo}/issues/${number}`;
   return axios.get(url)
 }

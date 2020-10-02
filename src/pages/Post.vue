@@ -1,32 +1,40 @@
 <template>
-  <div v-show="issue" >
-    <div v-html="issue.body_html" class="markdown-body"></div>
-  </div>
+  <div v-html="content" class="markdown-body"/>
 </template>
 
 <script>
 import 'github-markdown-css/github-markdown.css';
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Post',
   computed: {
     ...mapState([
       'issues'
     ]),
-    issue () {
-      const target = this.issues.find((o) => {
-        return +o.number === +this.$route.params.id
-      })
-      console.log(target)
-      return target
+    content () {
+      if (this.issues) {
+        const target = this.issues.find((o) => {
+          return +o.number === +this.$route.params.id
+        })
+        return target.body_html || null
+      } else {
+        return null
+      }
     },
   },
-  created () {
-    console.log(this.issue)
-  }
+  methods: {
+    ...mapActions([
+      'getIssues'
+    ]),
+  },
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .markdown-body {
+    h1 {
+      border-bottom: none;
+      text-align: center;
+    }
+  }
 </style>
