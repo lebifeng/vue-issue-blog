@@ -9,19 +9,14 @@
 </template>
 
 <script>
-import setup from '@/composition/issues'
+import { mapState } from 'vuex'
 export default {
   name: 'posts',
-  setup () {
-    const {
-      setupIssues,
-      issues,
-    } = setup()
-    setupIssues()
-    return {
-      issues
-    }
-  }
+   computed: {
+    ...mapState([
+      'issues'
+    ])
+  },
 }
 </script>
 
