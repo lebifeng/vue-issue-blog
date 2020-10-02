@@ -9,7 +9,7 @@ const instance = axios.create({
   baseURL: 'https://api.github.com',
   headers: {
     Accept: 'application/vnd.github.v3.html',
-    Authorization: `token ${accessToken}`,
+    Authorization: `token ${window.atob(accessToken)}`,
   },
 });
 
