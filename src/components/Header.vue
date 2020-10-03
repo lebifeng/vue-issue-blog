@@ -25,17 +25,15 @@ export default {
 
 <style lang="scss" scoped>
   .header {
-    font-size: 30px;
-  }
-  .header {
     text-align: center;
     padding: 24px 0px;
-    color: #333;
+    color: #222;
     a {
-      font-size: 28px;
+      font-size: 2rem;
       font-weight: bolder;
       display: inline-block;
       transition: opacity linear 100ms 0ms;
+      text-decoration: none;
       
       &:hover {
         cursor: pointer;
@@ -45,6 +43,10 @@ export default {
       
     a + a {
       margin-left: 36px;
+    }
+
+    a:visited {
+      color: inherit;
     }
   }
     

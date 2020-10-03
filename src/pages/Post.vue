@@ -33,6 +33,7 @@ export default {
 <style lang="scss">
   .markdown-body {
     h1 {
+      font-size: 2rem;
       border-bottom: none;
       text-align: center;
     }

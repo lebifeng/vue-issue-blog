@@ -3,7 +3,7 @@
     <div class="tags-container">
       <Tags @click-tag="selectTag" :selected-tag="currentTag"/>
     </div>
-    <router-link :to="`/posts/${issue.number}`" v-for="issue in filteredIssues" :key="issue.number" tag="li">
+    <router-link :to="`/posts/${issue.number}`" v-for="issue in filteredIssues" :key="issue.number">
       {{ issue.title }}
     </router-link>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import Tags from './Tags'
+import Tags from '@/components/Tags'
 export default {
   name: 'posts',
   components: {
@@ -64,8 +64,9 @@ export default {
       }
     }
     a + a {
-      margin-top: 1.3rem;
+      margin-top: 2rem;
     }
+    padding-bottom: 5rem;
   }
 
   .tags-container {
@@ -74,5 +75,9 @@ export default {
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 24px;
+
+    @media screen and (max-width: 441px) {
+      display: none;
+    }
   }
 </style>
