@@ -27,10 +27,14 @@ export default {
       'issues'
     ]),
     filteredIssues () {
+      const closedIssues = this.issues.filter((issue) => {
+        return issue.state === 'closed'
+      })
+
       if (!this.currentTag) {
-        return this.issues
+        return closedIssues
       }
-      return this.issues.filter((issue) => {
+      return closedIssues.filter((issue) => {
         return issue.labels.map((label) => label.name).includes(this.currentTag)
       })
     },
